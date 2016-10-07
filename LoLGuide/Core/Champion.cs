@@ -8,5 +8,20 @@ namespace Core
 {
     public class Champion
     {
+
+        public string Nom { get; private set; }
+
+        public string Nom { get; private set; }
+
+        public string Nom { get; private set; }
+
+        public string Nom { get; private set; }
+
+        public string Nom { get; private set; }
+
+        public string Nom { get; private set; }
+
+
+
     }
 }
