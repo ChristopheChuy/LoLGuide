@@ -8,8 +8,10 @@ namespace Core
 {
     public class Facade
     {
+        public ChargerChampion ChargerChampion { get; private set; }
         public List<Champion> GetListChampion()
         {
+            ChargerChampion.LoadChampion();
             return null;
         }
         public Champion GetChampion(int id)
@@ -19,6 +21,10 @@ namespace Core
         public List<Champion> GetListChampion(bool favoris,bool gratuit)
         {
             return null;
+        }
+        public Facade()
+        {
+            ChargerChampion = new ChargerChampionAPI();
         }
     }
 }
