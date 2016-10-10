@@ -37,9 +37,10 @@ namespace Core
 
         public Dictionary<BarreDeForce, Int16> BarresDeForce { get; private set; }
 
-        public Champion()
+        public Champion(int Id, string Nom)
         {
-            System.Diagnostics.Debug.WriteLine("Coucou");
+            this.Id = Id;
+            this.Nom = Nom;
         }
 
     }

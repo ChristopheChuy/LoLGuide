@@ -127,6 +127,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesAPI\AccesAPI.csproj">
+      <Project>{183a48a3-7f41-455d-8f42-d94afce16f19}</Project>
+      <Name>AccesAPI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{c2024ee8-13bb-46ec-bce0-64b8c5af6a1c}</Project>
       <Name>Core</Name>

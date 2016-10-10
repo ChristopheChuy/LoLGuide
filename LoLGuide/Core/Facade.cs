@@ -22,9 +22,9 @@ namespace Core
         {
             return null;
         }
-        public Facade()
+        public Facade(ChargerChampion chargerChampion)
         {
-            ChargerChampion = new ChargerChampionAPI();
+            this.ChargerChampion = chargerChampion;
         }
     }
 }
