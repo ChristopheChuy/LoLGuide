@@ -9,11 +9,15 @@ namespace Core
     public class Sort
     {
 
-        public string Image { get; private set; }
-
         public string Nom { get; private set; }
 
         public string Description { get; private set; }
+
+        public Sort(string Nom, string Description)
+        {
+            this.Nom = Nom;
+            this.Description = Description;
+        }
 
     }
 }

@@ -37,13 +37,27 @@ namespace Core
                     var champions = await response.Content.ReadAsStringAsync();
                     JObject o = JObject.Parse(champions);
 
-                    List<Champion> ListeChampions = o["data"].Children().Select(champ => new Champion(
-                        (int)champ.First().ElementAt(0).First(),
-                        champ.First().ElementAt(2).First().ToString()
-                        )).OrderBy(champion => champion.Nom).ToList();
+                    var ListeChampions = o["data"].Children().Select(champ => new
+                    {
+                        champion = new Champion(
+                            (int)champ.First()["id"],
+                            (string)champ.First()["name"],
+                            (string)champ.First()["lore"]
+                        ),
+                        sort = new Sort(
+                            (string)champ.First()["spells"].Children().First()["name"],
+                            (string)champ.First()["spells"].Children().First()["description"]
+                        )
+                        ,
 
+                    }
+                    ).ToList();
 
-                    ListeChampions.ForEach(champion => Debug.WriteLine(champion.Id + " : " + champion.Nom));
+                    foreach(var cs in ListeChampions){
+                        //cs.champion.addSort();
+                    }
+
+                    ListeChampions.ForEach(champion => Debug.WriteLine(champion.ToString()));
            }
 
             }

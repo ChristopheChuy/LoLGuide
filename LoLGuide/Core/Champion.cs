@@ -37,10 +37,22 @@ namespace Core
 
         public Dictionary<BarreDeForce, Int16> BarresDeForce { get; private set; }
 
-        public Champion(int Id, string Nom)
+        public Champion(int Id, string Nom, string Histoire)
         {
             this.Id = Id;
             this.Nom = Nom;
+            this.Histoire = Histoire;
+            Sorts = new List<Sort>();
+        }
+
+        public void addSort(List<Sort> sorts)
+        {
+            Sorts.AddRange(sorts);
+        }
+
+        public override string ToString()
+        {
+            return $"{Id} : {Nom} et {Sorts}";
         }
 
     }
