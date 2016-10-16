@@ -44,10 +44,6 @@ namespace Core
                             (string)champ.First()["name"],
                             (string)champ.First()["lore"]
                         ),
-                        /*   sort = new Sort(
-                                  (string)champ.First()["spells"].Children().First()["name"],
-                                  (string)champ.First()["spells"].Children().First()["description"]
-                              ),*/
                         listSort = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],
                                  (string)spell["description"]
