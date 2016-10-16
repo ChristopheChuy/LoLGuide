@@ -18,6 +18,10 @@ namespace Core
             this.Nom = Nom;
             this.Description = Description;
         }
+        public override string ToString()
+        {
+            return $"Nom : { Nom}  : Description : { Description} ";
+        }
 
     }
 }
