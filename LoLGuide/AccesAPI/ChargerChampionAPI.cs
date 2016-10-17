@@ -53,16 +53,18 @@ namespace Core
                                  (string)spell["description"]
                                   )
                         ).ToList()
-
-
                     }
-                    ).ToList();
+                    ).OrderBy(champ => champ.champion.Nom).ToList();
 
                     foreach(var cs in ListeChampions){
                         cs.champion.addSort(cs.listSort);
                     }
 
-                    ListeChampions.ForEach(champion => champion.listSort.ForEach(spell => Debug.WriteLine(spell)));
+                   
+                    
+
+
+                    ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
            }
 
             }

@@ -52,7 +52,7 @@ namespace Core
 
         public override string ToString()
         {
-            return $"{Id} : {Nom} et {Sorts}";
+            return $"{Id} : {Nom} ";
         }
 
     }
