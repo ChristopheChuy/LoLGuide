@@ -64,7 +64,7 @@ namespace Core
 
         public override string ToString()
         {
-            return $"{Id} : {Nom} ";
+            return $"Id champion : {Id} // Nom champion : {Nom} // Sorts : \n{Sorts.Aggregate(String.Empty, (chaine, s) => chaine+$"{s.Nom} : {s.Description}\n")}";
         }
 
     }

@@ -4,18 +4,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Core
 {
     public class ChargerChampionAPI : ChargerChampion
     {
-        public const String URLAPI= "https://euw.api.pvp.net/api/lol/euw/v1.2/champion";
-        public const String APIKEYS= "6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
+        public const String URLAPI= "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
         public async void LoadChampion()
         {
 
@@ -30,7 +31,7 @@ namespace Core
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.GetAsync("https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0");
+                HttpResponseMessage response = await client.GetAsync(URLAPI);
                 if (response.IsSuccessStatusCode)
                 {
 
@@ -42,11 +43,11 @@ namespace Core
                         champion = new Champion(
                             (int)champ.First()["id"],
                             (string)champ.First()["name"],
-                            (string)champ.First()["lore"]
+                            HttpUtility.HtmlDecode((string)champ.First()["lore"])
                         ),
                         listSort = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],
-                                 (string)spell["description"]
+                                  HttpUtility.HtmlDecode((string)spell["description"])
                                   )
                         ).ToList()
                     }
@@ -56,11 +57,11 @@ namespace Core
                         cs.champion.addSort(cs.listSort);
                     }
 
-                   
-                    
+                    string result = "bloup / & bloup encore";
+                    result = HttpUtility.HtmlDecode(result);
+                    Debug.WriteLine(result);
 
-
-                    ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
+                    //ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
            }
 
             }
