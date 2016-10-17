@@ -17,9 +17,9 @@ namespace Core
 
         public int PrixPointInfluence { get; private set; }
 
-        public List<string> Avantages { get; private set; }
+        public List<string> JouerAvec { get; private set; }
 
-        public List<string> Inconvenients { get; private set; }
+        public List<string> JouerContre { get; private set; }
 
         public string Histoire { get; private set; }
 
@@ -43,11 +43,23 @@ namespace Core
             this.Nom = Nom;
             this.Histoire = Histoire;
             Sorts = new List<Sort>();
+            JouerAvec = new List<string>();
+            JouerContre = new List<string>();
         }
 
         public void addSort(List<Sort> sorts)
         {
             Sorts.AddRange(sorts);
+        }
+
+        public void addJouerAvec(List<string> conseils)
+        {
+            JouerAvec.AddRange(conseils);
+        }
+
+        public void addJouerContre(List<string> conseils)
+        {
+            JouerContre.AddRange(conseils);
         }
 
         public override string ToString()
