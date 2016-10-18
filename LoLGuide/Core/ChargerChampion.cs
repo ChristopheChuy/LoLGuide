@@ -8,6 +8,6 @@ namespace Core
 {
     public interface ChargerChampion
     {
-        List<FacadeChampion> LoadChampion();
+        Task<List<IChampion>> LoadChampion();
     }
 }

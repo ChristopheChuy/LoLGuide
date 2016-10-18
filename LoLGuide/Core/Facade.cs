@@ -9,10 +9,10 @@ namespace Core
     public class Facade
     {
         public ChargerChampion ChargerChampion { get; private set; }
-        public List<FacadeChampion> GetListChampion()
+        async public Task<List<IChampion>> GetListChampion()
         {
 
-            return ChargerChampion.LoadChampion(); 
+            return await ChargerChampion.LoadChampion(); 
         }
         public Champion GetChampion(int id)
         {

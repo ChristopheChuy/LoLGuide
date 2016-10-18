@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-   public  interface FacadeChampion
+   public  interface IChampion
     {
         string Nom { get; }
+
         int Id { get; }
-        List<Sort> Sorts { get;}
+
+        string Histoire { get; }
+
+        IReadOnlyList<Sort> Sorts { get;}
+
     }
 }

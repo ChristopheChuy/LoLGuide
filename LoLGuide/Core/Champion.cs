@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class Champion : FacadeChampion
+    public class Champion : IChampion
     {
 
         public int Id { get; private set; }
@@ -17,9 +17,11 @@ namespace Core
 
         public int PrixPointInfluence { get; private set; }
 
-        public List<string> JouerAvec { get; private set; }
+        public IReadOnlyList<string> JouerAvec => jouerAvec.AsReadOnly();
+        private List<string> jouerAvec = new List<string>();
 
-        public List<string> JouerContre { get; private set; }
+        public IReadOnlyList<string> JouerContre=> jouerContre.AsReadOnly();
+        private List<string> jouerContre = new List<string>();
 
         public string Histoire { get; private set; }
 
@@ -31,9 +33,11 @@ namespace Core
 
         public bool Favoris { get; private set; }
 
-        public List<Sort> Sorts { get; private set; }
+        public IReadOnlyList<Sort> Sorts => sorts.AsReadOnly();
+        private List<Sort> sorts = new List<Sort>();
 
-        public List<Voie> Voies { get; private set; }
+        public IReadOnlyList<Voie> Voies => voies.AsReadOnly();
+        private List<Voie> voies = new List<Voie>();
 
         public Dictionary<BarreDeForce, Int16> BarresDeForce { get; private set; }
 
@@ -42,24 +46,11 @@ namespace Core
             this.Id = Id;
             this.Nom = Nom;
             this.Histoire = Histoire;
-            Sorts = new List<Sort>();
-            JouerAvec = new List<string>();
-            JouerContre = new List<string>();
         }
 
         public void addSort(List<Sort> sorts)
         {
-            Sorts.AddRange(sorts);
-        }
-
-        public void addJouerAvec(List<string> conseils)
-        {
-            JouerAvec.AddRange(conseils);
-        }
-
-        public void addJouerContre(List<string> conseils)
-        {
-            JouerContre.AddRange(conseils);
+            sorts.AddRange(sorts);
         }
 
         public override string ToString()

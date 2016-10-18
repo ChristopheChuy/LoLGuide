@@ -25,13 +25,20 @@ namespace IHMTest
     public sealed partial class MainPage : Page
     {
         public Facade  Facade { get; private set; }
+
         public MainPage()
         {
             this.InitializeComponent();
+            
+        }
+
+        async private void Button_Click(object sender, RoutedEventArgs e)
+        {
             Facade = new Facade(new ChargerChampionAPI());
-            List<FacadeChampion> listChampions = Facade.GetListChampion();
+            List<IChampion> listChampions = await Facade.GetListChampion();
 
             Debug.WriteLine(listChampions);
+            tb.Text = listChampions.Select(c => c.Nom).Aggregate(String.Empty, (chaine, s) => chaine + $"{s} ");
         }
     }
 }
