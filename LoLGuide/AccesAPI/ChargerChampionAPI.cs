@@ -57,11 +57,12 @@ namespace Core
                         cs.champion.addSort(cs.listSort);
                     }
 
-                    string result = "bloup / & bloup encore";
-                    result = HttpUtility.HtmlDecode(result);
+                    StringBuilder result = new StringBuilder( "bloup <br><br> bloup encore");
+                    result.Replace("<br>", "");
+//                    result = HttpUtility.HtmlDecode(result.ToString());
                     Debug.WriteLine(result);
 
-                    //ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
+                    ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
            }
 
             }
