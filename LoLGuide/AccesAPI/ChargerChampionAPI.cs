@@ -17,14 +17,15 @@ namespace Core
     public class ChargerChampionAPI : ChargerChampion
     {
         public const String URLAPI= "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
-        public async void LoadChampion()
+        public List<FacadeChampion> LoadChampion()
         {
 
-           loadIdChampion();
+            Task<List<FacadeChampion>> retour = loadIdChampion();
+            return retour.Result;
 
         }
-       
-        private async void loadIdChampion()
+
+        private async Task<List<FacadeChampion>> loadIdChampion()
         {
             using (var client = new HttpClient())
             {
@@ -43,11 +44,11 @@ namespace Core
                         champion = new Champion(
                             (int)champ.First()["id"],
                             (string)champ.First()["name"],
-                            HttpUtility.HtmlDecode((string)champ.First()["lore"])
+                         ( (string)champ.First()["lore"]).Replace("<br>", "")
                         ),
                         listSort = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],
-                                  HttpUtility.HtmlDecode((string)spell["description"])
+                                  ((string)spell["description"]).Replace("<br>", "")
                                   )
                         ).ToList()
                     }
@@ -63,9 +64,11 @@ namespace Core
                     Debug.WriteLine(result);
 
                     ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
+                    return ListeChampions.Select(championSort => (FacadeChampion)championSort.champion).ToList();
            }
 
             }
+            return null;
             
         }
     }

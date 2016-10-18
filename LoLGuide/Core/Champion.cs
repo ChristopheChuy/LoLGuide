@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class Champion
+    public class Champion : FacadeChampion
     {
 
         public int Id { get; private set; }

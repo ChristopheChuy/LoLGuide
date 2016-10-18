@@ -111,6 +111,8 @@
     <Compile Include="Champion.cs" />
     <Compile Include="ChargerChampion.cs" />
     <Compile Include="Facade.cs" />
+    <Compile Include="FacadeChampion.cs" />
+    <Compile Include="FacadeSort.cs" />
     <Compile Include="Voie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sort.cs" />

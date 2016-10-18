@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class Sort
+    public class Sort : FacadeSort
     {
 
         public string Nom { get; private set; }

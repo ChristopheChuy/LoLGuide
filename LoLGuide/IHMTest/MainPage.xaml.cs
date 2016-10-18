@@ -29,8 +29,9 @@ namespace IHMTest
         {
             this.InitializeComponent();
             Facade = new Facade(new ChargerChampionAPI());
-            Facade.GetListChampion();
-            Debug.WriteLine("");
+            List<FacadeChampion> listChampions = Facade.GetListChampion();
+
+            Debug.WriteLine(listChampions);
         }
     }
 }

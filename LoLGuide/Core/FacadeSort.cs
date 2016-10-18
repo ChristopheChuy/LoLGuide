@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public interface ChargerChampion
+    interface FacadeSort
     {
-        List<FacadeChampion> LoadChampion();
+        string Nom { get;  }
+
+        string Description { get;}
     }
 }
