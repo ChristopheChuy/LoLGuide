@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    interface SauvegarderChampion
+  public interface SauvegarderChampion
     {
         void sauvegarderChampion(List<IChampion> champions);
     }
