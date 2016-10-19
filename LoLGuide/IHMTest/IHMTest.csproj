@@ -135,6 +135,10 @@
       <Project>{c2024ee8-13bb-46ec-bce0-64b8c5af6a1c}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PersistanceXML\PersistanceXML.csproj">
+      <Project>{0043bc3f-c5ea-4c2f-8611-042d983db535}</Project>
+      <Name>PersistanceXML</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

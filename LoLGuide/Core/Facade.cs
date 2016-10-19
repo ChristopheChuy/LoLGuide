@@ -9,10 +9,15 @@ namespace Core
     public class Facade
     {
         public ChargerChampion ChargerChampion { get; private set; }
+        public SauvegarderChampion SauvegarderChampion { get; private set; }
         async public Task<List<IChampion>> GetListChampion()
         {
 
             return await ChargerChampion.LoadChampion(); 
+        }
+        public void SauvergarderChampion(List<IChampion> champions)
+        {
+            SauvegarderChampion.sauvegarderChampion(champions);
         }
         public Champion GetChampion(int id)
         {
@@ -22,8 +27,9 @@ namespace Core
         {
             return null;
         }
-        public Facade(ChargerChampion chargerChampion)
+        public Facade(ChargerChampion chargerChampion,SauvegarderChampion sauvegarderChampion)
         {
+            this.SauvegarderChampion = sauvegarderChampion;
             this.ChargerChampion = chargerChampion;
         }
     }

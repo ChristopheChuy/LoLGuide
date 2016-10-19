@@ -1,4 +1,5 @@
 ﻿using Core;
+using PersistanceXML;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,7 +30,7 @@ namespace IHMTest
         public MainPage()
         {
             this.InitializeComponent();
-            Facade = new Facade(new ChargerChampionAPI());
+            Facade = new Facade(new ChargerChampionAPI(),new SauvegarderChampionXML());
         }
 
         async private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,7 +43,7 @@ namespace IHMTest
         }
         private void ButtonSauvegarde(object sender, RoutedEventArgs e)
         {
-
+            Facade.SauvergarderChampion(ListChampion);
         }
     }
 }

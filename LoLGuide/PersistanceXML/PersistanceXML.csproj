@@ -107,6 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChampionXML.cs" />
+    <Compile Include="ChargerChampionXML.cs" />
     <Compile Include="SauvegarderChampionXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\PersistanceXML.rd.xml" />
@@ -116,6 +118,9 @@
       <Project>{c2024ee8-13bb-46ec-bce0-64b8c5af6a1c}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XML\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
