@@ -33,6 +33,11 @@ namespace IHMTest
             Facade = new Facade(new ChargerChampionAPI(),new SauvegarderChampionXML());
         }
 
+        /// <summary>
+        /// Evenement lors du clic sur le boutton "clic"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async private void Button_Click(object sender, RoutedEventArgs e)
         {
           
@@ -41,6 +46,12 @@ namespace IHMTest
             Debug.WriteLine(listChampions);
             tb.Text = listChampions.Select(c => c.Nom).Aggregate(String.Empty, (chaine, s) => chaine + $"{s} ");
         }
+
+        /// <summary>
+        /// Evenement lors du clic sur le boutton "suavegarde"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSauvegarde(object sender, RoutedEventArgs e)
         {
             Facade.SauvergarderChampion(ListChampion);

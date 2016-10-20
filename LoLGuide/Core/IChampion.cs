@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core
 {
+    /// <summary>
+    /// Facade immuable de champion
+    /// </summary>
    public  interface IChampion
     {
         string Nom { get; }

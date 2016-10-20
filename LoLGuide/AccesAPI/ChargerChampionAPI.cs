@@ -14,14 +14,11 @@ namespace Core
     {
         public const String URLAPI= "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
 
-        async public Task<List<IChampion>> LoadChampion()
-        {
-
-            return await loadIdChampion();
-
-        }
-
-        private async Task<List<IChampion>> loadIdChampion()
+        /// <summary>
+        /// Charge l'API LoL et récupère les données Json pour créer une liste de IChampion
+        /// </summary>
+        /// <returns> Une Task liste de IChampon </returns>
+        public async Task<List<IChampion>> LoadChampion()
         {
             List<IChampion> listeChampions1 = new List<IChampion>();
             using (var client = new HttpClient())
@@ -31,7 +28,7 @@ namespace Core
                 HttpResponseMessage response = await client.GetAsync(URLAPI);
                 if (response.IsSuccessStatusCode)
                 {
-
+                    // Transformation de l'interprétation de la ressource
                     var champions = await response.Content.ReadAsStringAsync();
                     JObject o = JObject.Parse(champions);
 
@@ -55,6 +52,7 @@ namespace Core
                     }
 
                     ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
+                    // Transforme la liste de Champion en IChampion
                     listeChampions1 =  ListeChampions.Select(championSort => (IChampion)championSort.champion).ToList();
                 }
             }
