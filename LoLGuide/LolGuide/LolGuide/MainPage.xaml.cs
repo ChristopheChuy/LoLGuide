@@ -9,10 +9,12 @@ namespace LolGuide
 {
     public partial class MainPage : MasterDetailPage
     {
+        MasterPage main;
         public MainPage()
         {
-            InitializeComponent();
-            
+            main = new MasterPage();
+            Master = main;
+            Detail = new ChampionPage();
         }
     }
 }

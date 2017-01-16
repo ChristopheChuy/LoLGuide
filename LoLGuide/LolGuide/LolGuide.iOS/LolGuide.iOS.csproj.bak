@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>LolGuide.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>LolGuideiOS</AssemblyName>
+    <AssemblyName>LolGuide.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

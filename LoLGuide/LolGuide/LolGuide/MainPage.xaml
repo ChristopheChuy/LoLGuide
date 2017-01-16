@@ -5,7 +5,7 @@
              x:Class="LolGuide.MainPage">
 
    <MasterDetailPage.Master>
-        <local:MasterPage x:Name="masterPage" />
+        <local:MasterPage  />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage>
