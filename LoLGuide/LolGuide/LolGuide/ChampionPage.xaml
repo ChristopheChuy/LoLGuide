@@ -5,8 +5,8 @@
   <StackLayout>
       <Grid>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="1*"/>
           <ColumnDefinition />
+          <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <SearchBar  />
         <Button Text="Filtre" Grid.Column="1"/>
