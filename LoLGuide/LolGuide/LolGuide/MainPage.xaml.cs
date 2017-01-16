@@ -7,11 +7,12 @@ using Xamarin.Forms;
 
 namespace LolGuide
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {
             InitializeComponent();
+            
         }
     }
 }
