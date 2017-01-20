@@ -12,7 +12,7 @@ namespace Core
 {
     public class ChargerChampionAPI : ChargerChampion
     {
-        public const String URLAPI= "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
+        public  const String URLAPI = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=allytips,enemytips,info,lore,passive,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
 
         /// <summary>
         /// Charge l'API LoL et récupère les données Json pour créer une liste de IChampion

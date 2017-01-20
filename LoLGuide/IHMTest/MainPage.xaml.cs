@@ -48,7 +48,7 @@ namespace IHMTest
         }
 
         /// <summary>
-        /// Evenement lors du clic sur le boutton "suavegarde"
+        /// Evenement lors du clic sur le boutton "sauvegarde"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -16,7 +16,7 @@ namespace PersistanceXML
             /*     Directory.SetCurrentDirectory(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "champions", "XML"));
 
                  StringBuilder stringBuilder = new StringBuilder("ListChampion.xml");
-                 using (XmlReader reader = XmlReader.Create())
+                 using (XmlReader reader = XmlReader.Create(stringBuilder))
                  {
                      while (reader.Read())
                      {

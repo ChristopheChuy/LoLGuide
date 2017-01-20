@@ -15,6 +15,17 @@ namespace LolGuide
             main = new MasterPage();
             Master = main;
             Detail = new ChampionPage();
+            main.ListView.ItemSelected += OnItemSelected;
+        }
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as MasterPageItem;
+            if (item != null)
+            {
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                main.ListView.SelectedItem = null;
+                IsPresented = false;
+            }
         }
     }
 }

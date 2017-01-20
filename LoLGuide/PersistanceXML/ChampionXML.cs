@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace PersistanceXML
 {
-
     [DataContract(Name = "champion")]
     class ChampionXML
     {
@@ -16,6 +15,7 @@ namespace PersistanceXML
         /// facade immuable de champion 
         /// </summary>
         public IChampion champion { get; }
+
         /// <summary>
         /// id du champion a sauvegarde et a charger
         ///
@@ -26,6 +26,7 @@ namespace PersistanceXML
             get { return champion.Id; }
             private set { }
         }
+
         /// <summary>
         /// nom du champion a sauvegarder
         /// </summary>
@@ -35,6 +36,7 @@ namespace PersistanceXML
             get { return champion.Nom; }
             private set { }
         }
+
         /// <summary>
         /// histoire du champion a sauvegarder
         /// </summary>
@@ -44,6 +46,7 @@ namespace PersistanceXML
             get { return champion.Histoire; }
             private set { }
         }
+
         /// <summary>
         /// sorts des champion a sauvegarder
         /// </summary>
@@ -53,6 +56,7 @@ namespace PersistanceXML
             get { return champion.Sorts; }
             private set { }
         }
+
         /// <summary>
         ///  constructeur de championXML
         /// </summary>

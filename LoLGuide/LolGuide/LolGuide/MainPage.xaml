@@ -5,14 +5,10 @@
              x:Class="LolGuide.MainPage">
 
    <MasterDetailPage.Master>
-        <local:MasterPage  />
+        
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-                <local:ChampionPage />
-            </x:Arguments>
-        </NavigationPage>
+        
     </MasterDetailPage.Detail>
 
 </MasterDetailPage >
