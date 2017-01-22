@@ -7,9 +7,22 @@
     <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding Title}"/>
+             <!--   <Image Source="list.jpg"/>
+              <Image Aspect="AspectFill"
+               WidthRequest="100"
+               HeightRequest="100"
+               HorizontalOptions="Center" Source="{Binding IconSource}"/>-->
+              
+            <Label Text="{Binding IconSource}"/>
+           <!--<Image Source="{Binding IconSource}"/>--> 
+            </StackLayout>
+          </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+  <Image Source="list.jpg"/>
   </StackLayout>
 </ContentPage>

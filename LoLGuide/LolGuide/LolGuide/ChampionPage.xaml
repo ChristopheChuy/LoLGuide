@@ -8,8 +8,9 @@
           <ColumnDefinition />
           <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <SearchBar Placeholder="Champion..." PlaceholderColor="Silver"  />
+        <SearchBar Placeholder="Champion..." PlaceholderColor="Silver"/>
         <Button Text="Filtre" Grid.Column="1"/>
       </Grid>
+    <ListView x:Name="listChampion" />
   </StackLayout>
 </ContentPage>

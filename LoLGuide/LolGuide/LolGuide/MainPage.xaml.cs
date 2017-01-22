@@ -12,6 +12,8 @@ namespace LolGuide
         MasterPage main;
         public MainPage()
         {
+            IsGestureEnabled = true;
+            MasterBehavior = MasterBehavior.Popover;
             main = new MasterPage();
             Master = main;
             Detail = new ChampionPage();

@@ -17,27 +17,34 @@ namespace LolGuide
         {
             InitializeComponent();
 
-            var masterPageItems = new List<MasterPageItem>();
+            List<MasterPageItem> masterPageItems = new List<MasterPageItem>();
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "Contacts",
-                IconSource = "contacts.png",
+                IconSource = "",
                 TargetType = typeof(ChampionPage)
             });
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "TodoList",
-                IconSource = "todo.png",
+                IconSource = "images/",
                 TargetType = typeof(RechercheInvocateur)
             });
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "Reminders",
-                IconSource = "reminders.png",
+                IconSource = "list.jpg",
                 TargetType = typeof(ChampionPage)
             });
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "Reminders",
+                IconSource = "",
+                TargetType = typeof(InfoChampion)
+            });
 
-            listView.ItemsSource = masterPageItems;
+
+            ListView.ItemsSource = masterPageItems;
         }
     }
 }

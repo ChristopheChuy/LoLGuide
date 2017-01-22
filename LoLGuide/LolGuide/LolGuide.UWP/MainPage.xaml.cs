@@ -20,7 +20,6 @@ namespace LolGuide.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
             LoadApplication(new LolGuide.App());
         }
     }
