@@ -89,12 +89,14 @@ namespace Core
         /// </summary>
         public Dictionary<BarreDeForce, Int16> BarresDeForce { get; private set; }
 
+
         /// <summary>
         /// Constructeur du champion
         /// </summary>
         /// <param name="Id"></param>
         /// <param name="Nom"></param>
         /// <param name="Histoire"></param>
+        /// <param name="URLImage"></param>
         public Champion(int Id, string Nom, string Histoire)
         {
             this.Id = Id;
@@ -108,7 +110,7 @@ namespace Core
         /// <param name="sorts"></param>
         public void addSort(List<Sort> sorts)
         {
-            sorts.AddRange(sorts);
+            this.Sorts.AddRange(sorts);
         }
 
         /// <summary>

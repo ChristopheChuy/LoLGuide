@@ -41,7 +41,8 @@ namespace Core
                         ),
                         listeSorts = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],
-                                  ((string)spell["description"]).Replace("<br>", "")
+                                  ((string)spell["description"]).Replace("<br>", ""),
+                                  (string)spell["image"]["full"]
                                   )
                         ).ToList()
                     }
@@ -49,13 +50,14 @@ namespace Core
 
                     foreach(var cs in ListeChampions){
                         cs.champion.addSort(cs.listeSorts);
+                        Debug.WriteLine(cs.champion);
                     }
                     
-                    //ListeChampions.ForEach(championSort => Debug.WriteLine(championSort.champion));
                     // Transforme la liste de Champion en IChampion
                     listeChampions1 =  ListeChampions.Select(championSort => (IChampion)championSort.champion).ToList();
                 }
             }
+            Debug.WriteLine(listeChampions1);
             return listeChampions1;
 
         }

@@ -18,16 +18,21 @@ namespace Core
         /// Description du sort
         /// </summary>
         public string Description { get; private set; }
+        /// <summary>
+        /// Image du sort
+        /// </summary>
+        public string Image { get; private set; }
 
         /// <summary>
         /// Constructeur du sort
         /// </summary>
         /// <param name="Nom"></param>
         /// <param name="Description"></param>
-        public Sort(string Nom, string Description)
+        public Sort(string Nom, string Description,string Image)
         {
             this.Nom = Nom;
             this.Description = Description;
+            this.Image = Image;
         }
 
         /// <summary>

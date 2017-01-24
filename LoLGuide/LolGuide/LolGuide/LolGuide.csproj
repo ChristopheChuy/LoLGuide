@@ -41,6 +41,8 @@
     <Compile Include="ChampionPage.xaml.cs">
       <DependentUpon>ChampionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImageSortConverter.cs" />
+    <Compile Include="ImageChampionConverter.cs" />
     <Compile Include="InfoChampion.xaml.cs">
       <DependentUpon>InfoChampion.xaml</DependentUpon>
     </Compile>
@@ -81,7 +83,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

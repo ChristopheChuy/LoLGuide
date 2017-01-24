@@ -19,8 +19,6 @@ namespace LolGuide
             InitializeComponent();
             Facade = new Facade(new ChargerChampionAPI(), new SauvegarderChampionXML());
             ChargementDonnee();
-            List<string> list = new List<string> { "blaba", "ggg" };
-           
             ListChampion.ItemSelected += OnItemSelected;
         }
         async void ChargementDonnee()
@@ -30,7 +28,7 @@ namespace LolGuide
         }
         public async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           await Navigation.PushAsync(new InfoChampion((String)((ListView)sender).SelectedItem));
+           await Navigation.PushAsync(new InfoChampion((IChampion)((ListView)sender).SelectedItem));
         }
     }
 }

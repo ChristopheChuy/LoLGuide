@@ -14,7 +14,7 @@
     <ListView x:Name="listChampion" >
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding Nom}"/>      
+          <ImageCell Text="{Binding Nom}" ImageSource="{Binding Nom,Converter={StaticResource imageChampionConverter}}"/>      
           
         </DataTemplate>
       </ListView.ItemTemplate>
