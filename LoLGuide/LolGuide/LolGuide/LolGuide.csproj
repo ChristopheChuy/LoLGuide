@@ -108,7 +108,20 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\AccesAPI\AccesAPI\AccesAPI.csproj">
+      <Project>{260a9293-8a09-43b9-860c-2cb6ff31a586}</Project>
+      <Name>AccesAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Core\Core.csproj">
+      <Project>{25b1e950-d0fa-4998-a3c8-9148985368fc}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PersistanceXML\PersistanceXML\PersistanceXML.csproj">
+      <Project>{d7dfbc73-27da-4fc3-acb0-f623112d307a}</Project>
+      <Name>PersistanceXML</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

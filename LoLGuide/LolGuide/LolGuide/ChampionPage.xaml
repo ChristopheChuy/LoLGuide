@@ -11,6 +11,13 @@
         <SearchBar Placeholder="Champion..." PlaceholderColor="Silver"/>
         <Button Text="Filtre" Grid.Column="1"/>
       </Grid>
-    <ListView x:Name="listChampion" />
+    <ListView x:Name="listChampion" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding Nom}"/>      
+          
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
 </ContentPage>

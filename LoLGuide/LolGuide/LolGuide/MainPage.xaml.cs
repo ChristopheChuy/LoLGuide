@@ -16,7 +16,7 @@ namespace LolGuide
             MasterBehavior = MasterBehavior.Popover;
             main = new MasterPage();
             Master = main;
-            Detail = new ChampionPage();
+            Detail = new NavigationPage(new ChampionPage());
             main.ListView.ItemSelected += OnItemSelected;
         }
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

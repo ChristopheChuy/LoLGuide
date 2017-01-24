@@ -10,9 +10,10 @@ namespace LolGuide
 {
     public partial class InfoChampion : ContentPage
     {
-        public InfoChampion()
+        public InfoChampion(String nom)
         {
             InitializeComponent();
+
         }
     }
 }

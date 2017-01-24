@@ -133,6 +133,10 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core\Core.csproj">
+      <Project>{25b1e950-d0fa-4998-a3c8-9148985368fc}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LolGuide\LolGuide.csproj">
       <Project>{b6e01193-b194-4911-87f3-6cb59732be8d}</Project>
       <Name>LolGuide</Name>
