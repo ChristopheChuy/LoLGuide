@@ -8,11 +8,9 @@ namespace Core
 {
     public enum BarreDeForce
     {
-
         PHYS,
         MAGIC,
         DIFFICULTE,
         POINTSDEVIE
-
     };
 }

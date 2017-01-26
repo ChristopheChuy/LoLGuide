@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Core;
 using Xamarin.Forms;
+using CoreViewModel;
 
 namespace LolGuide
 {
     public partial class InfoChampion : ContentPage
     {
-        private IChampion Champion;
+        private ChampionViewModel Champion;
 
-        public InfoChampion(IChampion champion)
+        public InfoChampion(ChampionViewModel champion)
         {
             InitializeComponent();
             this.Champion = champion;
