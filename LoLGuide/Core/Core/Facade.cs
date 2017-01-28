@@ -23,7 +23,6 @@ namespace Core
         /// <returns> Task liste de IChampion </returns>
         async public Task<List<IChampion>> GetListChampion()
         {
-
             return await ChargerChampion.LoadChampion(); 
         }
 

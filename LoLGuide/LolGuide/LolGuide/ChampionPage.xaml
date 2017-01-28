@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LolGuide.ChampionPage">
+             x:Class="LolGuide.ChampionPage"
+  Title="Liste des champions">
   <StackLayout>
       <Grid>
         <Grid.ColumnDefinitions>
@@ -14,7 +15,7 @@
     <ListView x:Name="listChampion" >
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ImageCell Text="{Binding Nom}" ImageSource="{Binding Nom,Converter={StaticResource imageChampionConverter}}"/>      
+          <ImageCell Text="{Binding Nom}" Detail="{Binding Titre}" ImageSource="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>      
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

@@ -18,7 +18,8 @@ namespace CoreViewModel
         public int Id { get; }
 
         public string Histoire { get; }
-
+        public string Titre { get; }
+        public string Image { get; }
         public ObservableCollection<SortViewModel> Sorts { get; }
 
         public ChampionViewModel(IChampion champion)
@@ -27,6 +28,8 @@ namespace CoreViewModel
             model = champion;
             Nom = champion.Nom;
             Id = champion.Id;
+            Titre = champion.Titre;
+            Image = champion.Image;
             Histoire = champion.Histoire;
             foreach(Sort sort in champion.Sorts)
             {

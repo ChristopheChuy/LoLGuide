@@ -12,6 +12,15 @@ namespace Core
         /// Id du champion
         /// </summary>
         public int Id { get; private set; }
+        /// <summary>
+        /// Nom du fichier de l'Image du champion
+        /// </summary>
+        public string Image { get; private set; }
+
+        /// <summary>
+        /// Titre du champion
+        /// </summary>
+        public string Titre { get; private set; }
 
         /// <summary>
         /// Nom du champion
@@ -44,6 +53,7 @@ namespace Core
         /// Histoire du champion dans l'univers du jeu
         /// </summary>
         public string Histoire { get; private set; }
+
 
         /// <summary>
         /// Taux de victoire du champion quand il est joué
@@ -82,6 +92,7 @@ namespace Core
         /// </summary>
     //    public IReadOnlyList<Voie> Voies => voies.AsReadOnly();
         private List<Voie> voies = new List<Voie>();
+        private string v;
 
         /// <summary>
         /// Barres de force du champion 
@@ -97,10 +108,12 @@ namespace Core
         /// <param name="Nom"></param>
         /// <param name="Histoire"></param>
         /// <param name="URLImage"></param>
-        public Champion(int Id, string Nom, string Histoire)
+        public Champion(int Id, string Nom, string Titre ,string Histoire, string Image)
         {
             this.Id = Id;
             this.Nom = Nom;
+            this.Titre = Titre;
+            this.Image = Image;
             this.Histoire = Histoire;
         }
 

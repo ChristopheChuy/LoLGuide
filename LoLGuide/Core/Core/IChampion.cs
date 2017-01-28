@@ -17,6 +17,9 @@ namespace Core
 
         string Histoire { get; }
 
+
+        string Image { get; }
+        string Titre { get; }
         List<Sort> Sorts { get;}
 
     }

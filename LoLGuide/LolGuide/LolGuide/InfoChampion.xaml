@@ -7,7 +7,7 @@
     <StackLayout>
       <Label Text="{Binding Nom}"/>
       <Label Text="{Binding Histoire}"/>
-      <ListView BackgroundColor="Red" ItemsSource="{Binding Sorts}">
+      <ListView ItemsSource="{Binding Sorts}">
      
       <ListView.ItemTemplate >
         <DataTemplate>
