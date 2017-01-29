@@ -11,12 +11,12 @@ namespace Core
     /// </summary>
    public  interface IChampion
     {
-        string Nom { get; }
+        string Nom { get; set; }
 
         int Id { get; }
 
         string Histoire { get; }
-
+        Dictionary<BarreDeForce, Int32> BarresDeForce { get; }
 
         string Image { get; }
         string Titre { get; }

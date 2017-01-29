@@ -13,8 +13,8 @@ namespace LolGuide
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string nomChampion = (string)value;
-            Uri uri = new Uri($"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{nomChampion}.png");
+            string key = (string)value;
+            Uri uri = new Uri($"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{key}.png");
             return ImageSource.FromUri(uri);
         }
 

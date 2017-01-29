@@ -25,7 +25,7 @@ namespace Core
         /// <summary>
         /// Nom du champion
         /// </summary>
-        public string Nom { get; private set; }
+        public string Nom { get;  set; }
 
         /// <summary>
         /// Prix du champion en monnaie virtuel du jeu (alimenté en monnaie réelle)
@@ -98,7 +98,7 @@ namespace Core
         /// Barres de force du champion 
         /// (1 valeur pour chaque barre représentée par un entier de 0 à 10) 
         /// </summary>
-        public Dictionary<BarreDeForce, Int16> BarresDeForce { get; private set; }
+        public Dictionary<BarreDeForce, Int32> BarresDeForce { get; private set; }
 
 
         /// <summary>
@@ -108,10 +108,11 @@ namespace Core
         /// <param name="Nom"></param>
         /// <param name="Histoire"></param>
         /// <param name="URLImage"></param>
-        public Champion(int Id, string Nom, string Titre ,string Histoire, string Image)
+        public Champion(int Id, string Nom, string Titre ,string Histoire, string Image, Dictionary<BarreDeForce, Int32> BarresDeForce)
         {
             this.Id = Id;
             this.Nom = Nom;
+            this.BarresDeForce = BarresDeForce;
             this.Titre = Titre;
             this.Image = Image;
             this.Histoire = Histoire;

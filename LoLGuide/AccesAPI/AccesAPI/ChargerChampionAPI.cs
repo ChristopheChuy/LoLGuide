@@ -12,7 +12,7 @@ namespace Core
 {
     public class ChargerChampionAPI : ChargerChampion
     {
-        public  const String URLAPI = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?locale=fr_FR&champData=allytips,enemytips,info,lore,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
+        public  const String URLAPI = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?locale=fr_FR&champData=info,lore,spells,tags&api_key=6c2ec2f3-72bb-4b83-a3d0-982da8adb4c0";
 
         /// <summary>
         /// Charge l'API LoL et récupère les données Json pour créer une liste de IChampion
@@ -39,7 +39,14 @@ namespace Core
                             (string)champ.First()["name"],
                             (string)champ.First()["title"],
                             ((string)champ.First()["lore"]).Replace("<br>", ""),
-                            (string)champ.First()["key"]
+                            (string)champ.First()["key"],
+                            new Dictionary<BarreDeForce, Int32>() {
+                                { BarreDeForce.MAGIC,(int)champ.First()["info"]["magic"] },
+                                { BarreDeForce.PHYS,(int)champ.First()["info"]["attack"] },
+                                { BarreDeForce.DIFFICULTE,(int)champ.First()["info"]["difficulty"] },
+                                { BarreDeForce.POINTSDEVIE,(int)champ.First()["info"]["defense"] }
+
+                    }
                         ),
                         listeSorts = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],

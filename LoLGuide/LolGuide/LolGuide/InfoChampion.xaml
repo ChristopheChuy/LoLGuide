@@ -5,10 +5,10 @@
             Title="Info Champion">
   <ScrollView>
     <StackLayout>
-      <Label Text="{Binding Nom}"/>
+      <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
       <Label Text="{Binding Histoire}"/>
+      
       <ListView ItemsSource="{Binding Sorts}">
-     
       <ListView.ItemTemplate >
         <DataTemplate>
           <ViewCell>

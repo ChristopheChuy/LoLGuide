@@ -14,9 +14,8 @@ namespace LolGuide
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string imageSort = (string)value;
-            string url = $"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/spell/{imageSort}";
-            Uri uri = new Uri(url);
-            return uri;
+            Uri uri = new Uri($"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/spell/{imageSort}");
+            return ImageSource.FromUri(uri);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

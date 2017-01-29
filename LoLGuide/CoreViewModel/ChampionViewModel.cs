@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,20 @@ namespace CoreViewModel
    public class ChampionViewModel : BindableObject
     {
         private IChampion model { get; }
-        public string Nom { get; }
+        private string nom;
+
+        public string Nom
+        {
+            get { return nom; }
+            set {
+                model.Nom = value;
+                nom = value;
+                OnPropertyChanged("Nom");
+            }
+        }
 
         public int Id { get; }
-
+        public ReadOnlyDictionary<BarreDeForce, Int32> BarresDeForce { get; }
         public string Histoire { get; }
         public string Titre { get; }
         public string Image { get; }
@@ -27,6 +38,7 @@ namespace CoreViewModel
             Sorts = new ObservableCollection<SortViewModel>();
             model = champion;
             Nom = champion.Nom;
+            BarresDeForce = new ReadOnlyDictionary<BarreDeForce, Int32>(champion.BarresDeForce);
             Id = champion.Id;
             Titre = champion.Titre;
             Image = champion.Image;
