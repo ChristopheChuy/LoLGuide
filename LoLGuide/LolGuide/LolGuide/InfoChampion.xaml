@@ -1,26 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LolGuide.InfoChampion"
             Title="Info Champion">
-  <ScrollView>
-    <StackLayout>
-      <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
-      <Label Text="{Binding Histoire}"/>
-      
-      <ListView ItemsSource="{Binding Sorts}">
-      <ListView.ItemTemplate >
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout>
-                <Image Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
-                <Label Text="{Binding Nom}"/>
-                <Label Text="{Binding Description}"/> 
-              </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-    </StackLayout>
-   </ScrollView>
-</ContentPage>
+  <ContentPage Title="Info">
+    <ScrollView>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Image WidthRequest="100" HeightRequest="100" Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
+        <Entry Grid.Column="1" Text="{Binding Nom ,Mode=TwoWay}"/>
+        <Switch Grid.Column="2" />
+        
+      </Grid>
+    </ScrollView>
+    </ContentPage>
+  <ContentPage Title="Histoire">
+    <ScrollView>
+     <Label Text="{Binding Histoire}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </ScrollView>
+  </ContentPage >
+    <ContentPage Title="Sorts">
+        <ScrollView>
+          <ListView ItemsSource="{Binding Sorts}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ImageCell Text="{Binding Nom}" Detail="{Binding Description}" ImageSource="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+       </ScrollView>
+    </ContentPage>
+</TabbedPage>

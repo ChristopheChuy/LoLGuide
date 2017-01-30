@@ -9,7 +9,7 @@ using CoreViewModel;
 
 namespace LolGuide
 {
-    public partial class InfoChampion : ContentPage
+    public partial class InfoChampion : TabbedPage
     {
         private ChampionViewModel Champion;
 
@@ -18,6 +18,7 @@ namespace LolGuide
             InitializeComponent();
             this.Champion = champion;
             BindingContext = champion;
+            
         }
     }
 }
