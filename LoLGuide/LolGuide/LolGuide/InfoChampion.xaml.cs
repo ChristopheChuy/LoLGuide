@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using CoreViewModel;
+using System.Diagnostics;
 
 namespace LolGuide
 {
@@ -27,6 +28,7 @@ namespace LolGuide
         {
             if (e.Value)
             {
+                Debug.WriteLine("ADD");
                 Facade.addChampionFavori(Champion);
             }else
             {

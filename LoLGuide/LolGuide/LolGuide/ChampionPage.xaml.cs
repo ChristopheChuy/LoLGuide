@@ -6,28 +6,32 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using CoreViewModel;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace LolGuide
 {
     public partial class ChampionPage : ContentPage
     {
         public FacadeViewModel Facade { get; private set; }
-       public Button ChoixList { get { return choixList; } }
-        public ListView ListChampion { get { return listChampion; } }
         public ChampionPage()
         {
             InitializeComponent();
             Facade = new FacadeViewModel();
-            ChargementDonnee();
-            ListChampion.ItemSelected += OnItemSelected;
-            ChoixList.Clicked += ChoixListEvent;
-            SearchChampion.SearchCommand = new Command(() => { ListChampion.ItemsSource = Facade.listChampionViewModel.Where(championVM => championVM.Nom.ToLower().Contains(SearchChampion.Text.ToLower())); });
+            
+            listChampion.IsPullToRefreshEnabled = true;
+            listChampion.RefreshCommand = new Command(() => { ChargementDonnee();  });
+            listChampion.BeginRefresh(); 
+            listChampion.ItemSelected += OnItemSelected;
+            choixList.Clicked += ChoixListEvent;
+            SearchChampion.SearchCommand = new Command(() => { listChampion.ItemsSource = Facade.listChampionViewModel.Where(championVM => championVM.Nom.ToLower().Contains(SearchChampion.Text.ToLower())); });
 
         }
+
+      
         async void ChargementDonnee()
         {
-            ObservableCollection<ChampionViewModel> listChampionCharge = await Facade.GetListChampion();
-            ListChampion.ItemsSource = listChampionCharge;
+            listChampion.ItemsSource = await Facade.GetListChampion();
+            listChampion.EndRefresh();
         }
         public async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -35,18 +39,18 @@ namespace LolGuide
         }
         public void ChoixListEvent(object sender, EventArgs e)
         {
-            if (ChoixList.Text.Equals("Liste des champions"))
+            if (choixList.Text.Equals("Liste des champions"))
             {
-                ChoixList.Text = "Favori";
-                ListChampion.ItemsSource = Facade.listChampionViewModel;
+                choixList.Text = "Favori";
+                listChampion.ItemsSource = Facade.listChampionViewModel;
 
             }
             else
             {
-                if(ChoixList.Text.Equals("Favori"))
+                if(choixList.Text.Equals("Favori"))
                 {
-                    ListChampion.ItemsSource = Facade.listFavori;
-                    ChoixList.Text = "Liste des champions";
+                    listChampion.ItemsSource = Facade.listFavori;
+                    choixList.Text = "Liste des champions";
                 }
             }
 

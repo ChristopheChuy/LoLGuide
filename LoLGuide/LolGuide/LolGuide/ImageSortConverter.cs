@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Converteur
+namespace LolGuide
 {
     public class ImageSortConverter : IValueConverter
     {

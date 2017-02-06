@@ -41,6 +41,8 @@
     <Compile Include="ChampionPage.xaml.cs">
       <DependentUpon>ChampionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImageChampionConverter.cs" />
+    <Compile Include="ImageSortConverter.cs" />
     <Compile Include="InfoChampion.xaml.cs">
       <DependentUpon>InfoChampion.xaml</DependentUpon>
     </Compile>
@@ -108,10 +110,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Converter\Converter.csproj">
-      <Project>{4246aa41-2020-4d9e-bce3-c617f7e326ca}</Project>
-      <Name>Converter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CoreViewModel\CoreViewModel.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>CoreViewModel</Name>
