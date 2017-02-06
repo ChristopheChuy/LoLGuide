@@ -44,9 +44,9 @@ namespace Core
                                 { BarreDeForce.MAGIC,(int)champ.First()["info"]["magic"] },
                                 { BarreDeForce.PHYS,(int)champ.First()["info"]["attack"] },
                                 { BarreDeForce.DIFFICULTE,(int)champ.First()["info"]["difficulty"] },
-                                { BarreDeForce.POINTSDEVIE,(int)champ.First()["info"]["defense"] }
-
-                    }
+                                { BarreDeForce.POINTSDEVIE,(int)champ.First()["info"]["defense"] },
+                            },
+                            champ.First["tags"].Select(tag => (string)tag).ToList()
                         ),
                         listeSorts = champ.First()["spells"].Children().Select(spell => new Sort(
                                   (string)spell["name"],

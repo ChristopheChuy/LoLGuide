@@ -1,5 +1,4 @@
-﻿using Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace LolGuide
+namespace Converter
 {
-    class ImageSortConverter : IValueConverter
+    public class ImageChampionConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string imageSort = (string)value;
-            Uri uri = new Uri($"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/spell/{imageSort}");
+            string key = (string)value;
+            Uri uri = new Uri($"http://ddragon.leagueoflegends.com/cdn/7.2.1/img/champion/{key}.png");
             return ImageSource.FromUri(uri);
         }
 

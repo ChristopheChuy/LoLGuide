@@ -14,9 +14,11 @@ namespace CoreViewModel
     public class FacadeViewModel
     {
         private Facade FacadeModel { get; }
-
+        public ObservableCollection<ChampionViewModel> listFavori;
+        public  ObservableCollection<ChampionViewModel> listChampionViewModel;
         public FacadeViewModel() {
             FacadeModel = new Facade(new ChargerChampionAPI(), new SauvegarderChampionXML());
+            listFavori = new ObservableCollection<ChampionViewModel>();
         }
         /// <summary>
         /// Récupère la liste des champions à partir de du Model
@@ -24,7 +26,7 @@ namespace CoreViewModel
         /// <returns> Task liste de IChampion </returns>
         async public Task<ObservableCollection<ChampionViewModel>> GetListChampion()
         {
-            ObservableCollection<ChampionViewModel> listChampionViewModel = new ObservableCollection<ChampionViewModel>();
+            listChampionViewModel = new ObservableCollection<ChampionViewModel>();
             List<IChampion> listChampion = await FacadeModel.GetListChampion();
             foreach(IChampion champion in listChampion)
             {
@@ -33,7 +35,16 @@ namespace CoreViewModel
             }
             Debug.WriteLine(listChampionViewModel);
             return listChampionViewModel;
-
+        }
+        public void addChampionFavori(ChampionViewModel championVM)
+        {
+            listFavori.Add(championVM);
+            championVM.Favoris = true;
+        }
+        public void deleteChampionFavori(ChampionViewModel championVM)
+        {
+            championVM.Favoris = false;
+            listFavori.Remove(championVM);
         }
     }
 }

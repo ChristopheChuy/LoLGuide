@@ -74,7 +74,7 @@ namespace Core
         /// <summary>
         /// Indique si l'utilisateur a mis ce champion en favoris
         /// </summary>
-        public bool Favoris { get; private set; }
+        public bool Favoris { get;  set; }
 
         /// <summary>
         /// Liste des sorst du champion
@@ -100,6 +100,11 @@ namespace Core
         /// </summary>
         public Dictionary<BarreDeForce, Int32> BarresDeForce { get; private set; }
 
+        /// <summary>
+        /// Tags du champion
+        /// </summary>
+        private List<string> tags;
+        public List<string> Tags { get; private set; }
 
         /// <summary>
         /// Constructeur du champion
@@ -108,9 +113,10 @@ namespace Core
         /// <param name="Nom"></param>
         /// <param name="Histoire"></param>
         /// <param name="URLImage"></param>
-        public Champion(int Id, string Nom, string Titre ,string Histoire, string Image, Dictionary<BarreDeForce, Int32> BarresDeForce)
+        public Champion(int Id, string Nom, string Titre ,string Histoire, string Image, Dictionary<BarreDeForce, Int32> BarresDeForce, List<string> Tags)
         {
             this.Id = Id;
+            this.Tags = Tags;
             this.Nom = Nom;
             this.BarresDeForce = BarresDeForce;
             this.Titre = Titre;

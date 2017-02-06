@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LolGuide.ChampionPage"
+             
   Title="Liste des  champions">
   <StackLayout>
       <Grid>
@@ -9,8 +10,8 @@
           <ColumnDefinition />
           <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <SearchBar Placeholder="Champion..." PlaceholderColor="Silver"/>
-        <Button Text="Filtre" Grid.Column="1"/>
+        <SearchBar Placeholder="Champion..." x:Name="SearchChampion" PlaceholderColor="Silver"/>
+        <Button   Text="Favori" Grid.Column="1" x:Name="choixList" />
       </Grid>
     <ListView x:Name="listChampion">
       <ListView.ItemTemplate>

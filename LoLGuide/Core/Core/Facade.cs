@@ -8,6 +8,11 @@ namespace Core
 {
     public class Facade
     {
+        private List<IChampion> listChampion;
+        private List<IChampion> listChampionFavori;
+
+
+        
         /// <summary>
         /// Sert à la persistance
         /// </summary>
@@ -23,7 +28,8 @@ namespace Core
         /// <returns> Task liste de IChampion </returns>
         async public Task<List<IChampion>> GetListChampion()
         {
-            return await ChargerChampion.LoadChampion(); 
+            listChampion =  await ChargerChampion.LoadChampion();
+            return listChampion; 
         }
 
         /// <summary>
@@ -52,6 +58,8 @@ namespace Core
         public Facade(ChargerChampion chargerChampion,SauvegarderChampion sauvegarderChampion)
         {
             this.SauvegarderChampion = sauvegarderChampion;
+            listChampion = new List<IChampion>();
+            listChampionFavori = new List<IChampion>();
             this.ChargerChampion = chargerChampion;
         }
     }

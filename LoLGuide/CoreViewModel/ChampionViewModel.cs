@@ -25,7 +25,18 @@ namespace CoreViewModel
                 OnPropertyChanged("Nom");
             }
         }
-
+        private bool favori;
+        public bool Favoris
+        {
+            get { return favori; }
+            set
+            {
+                model.Favoris = value;
+                favori = value;
+                OnPropertyChanged("Favoris");
+            }
+        }
+        public  List<string> Tags { get; }
         public int Id { get; }
         public ReadOnlyDictionary<BarreDeForce, Int32> BarresDeForce { get; }
         public string Histoire { get; }
@@ -37,6 +48,8 @@ namespace CoreViewModel
         {
             Sorts = new ObservableCollection<SortViewModel>();
             model = champion;
+            Tags = champion.Tags;
+            Favoris = champion.Favoris;
             Nom = champion.Nom;
             BarresDeForce = new ReadOnlyDictionary<BarreDeForce, Int32>(champion.BarresDeForce);
             Id = champion.Id;

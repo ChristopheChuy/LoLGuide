@@ -17,10 +17,11 @@ namespace Core
 
         string Histoire { get; }
         Dictionary<BarreDeForce, Int32> BarresDeForce { get; }
-
+        List<string> Tags { get; }
         string Image { get; }
         string Titre { get; }
         List<Sort> Sorts { get;}
+        bool Favoris { get; set; }
 
     }
 }

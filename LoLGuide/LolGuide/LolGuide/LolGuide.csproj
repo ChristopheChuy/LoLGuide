@@ -41,8 +41,6 @@
     <Compile Include="ChampionPage.xaml.cs">
       <DependentUpon>ChampionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImageSortConverter.cs" />
-    <Compile Include="ImageChampionConverter.cs" />
     <Compile Include="InfoChampion.xaml.cs">
       <DependentUpon>InfoChampion.xaml</DependentUpon>
     </Compile>
@@ -110,17 +108,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AccesAPI\AccesAPI\AccesAPI.csproj">
-      <Project>{260a9293-8a09-43b9-860c-2cb6ff31a586}</Project>
-      <Name>AccesAPI</Name>
+    <ProjectReference Include="..\..\Converter\Converter.csproj">
+      <Project>{4246aa41-2020-4d9e-bce3-c617f7e326ca}</Project>
+      <Name>Converter</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\CoreViewModel\CoreViewModel.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>CoreViewModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\PersistanceXML\PersistanceXML\PersistanceXML.csproj">
-      <Project>{d7dfbc73-27da-4fc3-acb0-f623112d307a}</Project>
-      <Name>PersistanceXML</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

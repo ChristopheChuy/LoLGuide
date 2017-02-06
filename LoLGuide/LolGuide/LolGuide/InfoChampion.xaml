@@ -5,30 +5,41 @@
             Title="Info Champion">
   <ContentPage Title="Info">
     <ScrollView>
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="auto"/>
-          <ColumnDefinition/>
-          <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
-        <Image WidthRequest="100" HeightRequest="100" Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
-        <Entry Grid.Column="1" Text="{Binding Nom ,Mode=TwoWay}"/>
-        <Switch Grid.Column="2" />
+    
+          <StackLayout>
+            <StackLayout Orientation="Horizontal" >
+              <Image WidthRequest="100" HeightRequest="100" Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
+              <Label Text="Favori : "/>
+              <Switch IsToggled="{Binding Favoris}" x:Name="favoriSwitch"/>
+              </StackLayout>
+             <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
+             <ListView SeparatorVisibility="None" ItemsSource="{Binding Tags}"/>
+      
+      
         
-      </Grid>
+    </StackLayout>
     </ScrollView>
     </ContentPage>
   <ContentPage Title="Histoire">
     <ScrollView>
      <Label Text="{Binding Histoire}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
     </ScrollView>
-  </ContentPage >
+  </ContentPage>
     <ContentPage Title="Sorts">
         <ScrollView>
-          <ListView ItemsSource="{Binding Sorts}">
+          <ListView HasUnevenRows="true" ItemsSource="{Binding Sorts}">
           <ListView.ItemTemplate>
             <DataTemplate>
-              <ImageCell Text="{Binding Nom}" Detail="{Binding Description}" ImageSource="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
+              <ViewCell>
+                <StackLayout>
+                    <Label FontSize="18" Text="{Binding Nom}"/>
+                    <StackLayout Orientation="Horizontal">
+                      <Image    WidthRequest="90"
+             HeightRequest="90" Aspect="AspectFit" Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
+                      <Label Text="{Binding Description}"/>
+                    </StackLayout>
+                </StackLayout>
+              </ViewCell>
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>
