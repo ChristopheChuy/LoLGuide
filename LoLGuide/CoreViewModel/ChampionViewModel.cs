@@ -11,11 +11,24 @@ using Xamarin.Forms;
 
 namespace CoreViewModel
 {
+   /// <summary>
+   /// View Model de la classe Champion
+   /// </summary>
    public class ChampionViewModel : BindableObject
     {
+        /// <summary>
+        /// Model de type IChampion
+        /// </summary>
         private IChampion model { get; }
+
+        /// <summary>
+        /// Attribut nom
+        /// </summary>
         private string nom;
 
+        /// <summary>
+        /// Property Nom
+        /// </summary>
         public string Nom
         {
             get { return nom; }
@@ -25,7 +38,14 @@ namespace CoreViewModel
                 OnPropertyChanged("Nom");
             }
         }
+        /// <summary>
+        /// Attribut favori
+        /// </summary>
         private bool favori;
+
+        /// <summary>
+        /// Property Favori
+        /// </summary>
         public bool Favoris
         {
             get { return favori; }
@@ -36,19 +56,48 @@ namespace CoreViewModel
                 OnPropertyChanged("Favoris");
             }
         }
-        public  List<string> Tags { get; }
+
+        /// <summary>
+        /// ObservableCollection de Tags
+        /// </summary>
+        public ObservableCollection<string> Tags { get; }
+
+        /// <summary>
+        /// Property Id identifiant le champion
+        /// </summary>
         public int Id { get; }
+
         public ReadOnlyDictionary<BarreDeForce, Int32> BarresDeForce { get; }
+
+        /// <summary>
+        /// Property Histoire du champion
+        /// </summary>
         public string Histoire { get; }
+
+        /// <summary>
+        /// Property Titre du champion
+        /// </summary>
         public string Titre { get; }
+
+        /// <summary>
+        /// Property Image du champion
+        /// </summary>
         public string Image { get; }
+
+        /// <summary>
+        /// ObservableCollection de Sorts du Champion
+        /// </summary>
         public ObservableCollection<SortViewModel> Sorts { get; }
 
+        /// <summary>
+        /// Constructeur 
+        /// </summary>
+        /// <param name="champion"></param>
         public ChampionViewModel(IChampion champion)
         {
             Sorts = new ObservableCollection<SortViewModel>();
             model = champion;
-            Tags = champion.Tags;
+            Tags = new ObservableCollection<string>(champion.Tags);
             Favoris = champion.Favoris;
             Nom = champion.Nom;
             BarresDeForce = new ReadOnlyDictionary<BarreDeForce, Int32>(champion.BarresDeForce);

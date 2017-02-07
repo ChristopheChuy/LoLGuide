@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:converter="clr-namespace:Converter;assembly=Converter"
+             xmlns:converter="clr-namespace:Converter;assembly=Converter"
              xmlns:local="clr-namespace:LolGuide;"
              x:Class="LolGuide.App"
             >
@@ -9,9 +9,10 @@
     <ResourceDictionary>
       <local:ImageChampionConverter x:Key="imageChampionConverter"/>
       <local:ImageSortConverter x:Key="imageSortConverter"/>
-      <!--<Style x:Key="buttonStyle" TargetType="ImageCell">
-        <Setter Property="TextColor" Value="Red"/>
-      </Style>-->
+      <Color x:Key="color">Green</Color>
+      <Style x:Key="buttonStyle" TargetType="Button">
+        <Setter Property="BorderRadius" Value="15"/>
+      </Style>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

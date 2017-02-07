@@ -5,40 +5,44 @@
             Title="Info Champion">
   <ContentPage Title="Info">
     <ScrollView>
-          <StackLayout>
-            <StackLayout Orientation="Horizontal" >
-              <Image WidthRequest="100" HeightRequest="100" Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
-              <Label Text="Favori : " VerticalOptions="LayoutOptions.CenterAndExpand" HorizontalOptions="EndAndExpand"/>
-              <Switch IsToggled="{Binding Favoris}" x:Name="favoriSwitch"/>
-              </StackLayout>
-             <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
-             <ListView SeparatorVisibility="None" ItemsSource="{Binding Tags}"/>
-         </StackLayout>
-    </ScrollView>
-    </ContentPage>
-  <ContentPage Title="Histoire">
-    <ScrollView>
-     <Label Text="{Binding Histoire}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+      <StackLayout>
+        <StackLayout Orientation="Horizontal" >
+          <Image WidthRequest="100"
+                 HeightRequest="100"
+                 Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
+          <Label Text="Favori : " VerticalOptions="LayoutOptions.CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+          <Switch IsToggled="{Binding Favoris}" x:Name="favoriSwitch"/>
+        </StackLayout>
+        <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
+        <ListView SeparatorVisibility="None" ItemsSource="{Binding Tags}"/>
+      </StackLayout>
     </ScrollView>
   </ContentPage>
-    <ContentPage Title="Sorts">
-        <ScrollView>
-          <ListView HasUnevenRows="true" ItemsSource="{Binding Sorts}">
-          <ListView.ItemTemplate>
-            <DataTemplate>
-              <ViewCell>
-                <StackLayout>
-                    <Label FontSize="18" Text="{Binding Nom}"/>
-                    <StackLayout Orientation="Horizontal">
-                      <Image    WidthRequest="90"
-             HeightRequest="90" Aspect="AspectFit" Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
-                      <Label Text="{Binding Description}"/>
-                    </StackLayout>
+  <ContentPage Title="Histoire">
+    <ScrollView>
+      <Label Text="{Binding Histoire}" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </ScrollView>
+  </ContentPage>
+  <ContentPage Title="Sorts">
+    <ScrollView>
+      <ListView HasUnevenRows="true" ItemsSource="{Binding Sorts}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout>
+                <Label FontSize="18" Text="{Binding Nom}"/>
+                <StackLayout Orientation="Horizontal">
+                  <Image WidthRequest="90"
+                         HeightRequest="90"
+                         Aspect="AspectFit"
+                         Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
+                  <Label Text="{Binding Description}"/>
                 </StackLayout>
-              </ViewCell>
-            </DataTemplate>
-          </ListView.ItemTemplate>
-        </ListView>
-       </ScrollView>
-    </ContentPage>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ScrollView>
+  </ContentPage>
 </TabbedPage>

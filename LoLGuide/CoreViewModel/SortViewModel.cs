@@ -8,22 +8,36 @@ using Xamarin.Forms;
 
 namespace CoreViewModel
 {
+    /// <summary>
+    /// View Model de la classe Sort
+    /// </summary>
     public class SortViewModel : BindableObject
     {
-        private Sort model { get;}
+
         /// <summary>
-        /// Nom du sort
+        /// Model
+        /// </summary>
+        private Sort model { get;}
+
+        /// <summary>
+        /// Property Nom du sort
         /// </summary>
         public string Nom { get; private set; }
 
         /// <summary>
-        /// Description du sort
+        /// Property Description du sort
         /// </summary>
         public string Description { get; private set; }
+
         /// <summary>
-        /// Image du sort
+        /// Property Image du sort
         /// </summary>
         public string Image { get; private set; }
+
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="sort"> Model </param>
         public SortViewModel(Sort sort)
         {
             model = sort;

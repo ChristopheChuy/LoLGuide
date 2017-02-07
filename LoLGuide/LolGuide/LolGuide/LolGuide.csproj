@@ -54,9 +54,6 @@
     </Compile>
     <Compile Include="MasterPageItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RechercheInvocateur.xaml.cs">
-      <DependentUpon>RechercheInvocateur.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -93,12 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ChampionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="RechercheInvocateur.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
