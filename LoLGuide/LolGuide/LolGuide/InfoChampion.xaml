@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customLib="clr-namespace:CustomViewLib;assembly=CustomViewLib"
              x:Class="LolGuide.InfoChampion"
             Title="Info Champion">
   <ContentPage Title="Info">
@@ -10,11 +11,11 @@
           <Image WidthRequest="100"
                  HeightRequest="100"
                  Source="{Binding Image,Converter={StaticResource imageChampionConverter}}"/>
-          <Label Text="Favori : " VerticalOptions="LayoutOptions.CenterAndExpand" HorizontalOptions="EndAndExpand"/>
-          <Switch IsToggled="{Binding Favoris}" x:Name="favoriSwitch"/>
+          <Label Text="Favori : " VerticalOptions="LayoutOptions.CenterAndExpand" HorizontalOptions="EndAndExpand" Style="{StaticResource fontSizeLabel}"/>
+          <Switch IsToggled="{Binding Favoris}"  x:Name="favoriSwitch"/>
         </StackLayout>
         <Entry Text="{Binding Nom ,Mode=TwoWay}"/>
-        <ListView SeparatorVisibility="None" ItemsSource="{Binding Tags}"/>
+        <ListView ItemSelected="selectionNull" SeparatorVisibility="None" ItemsSource="{Binding Tags}"/>
       </StackLayout>
     </ScrollView>
   </ContentPage>
@@ -24,22 +25,12 @@
     </ScrollView>
   </ContentPage>
   <ContentPage Title="Sorts">
+    <Label Text="Problème du BindingContext au sein du SortViewCell" />
     <ScrollView>
-      <ListView HasUnevenRows="true" ItemsSource="{Binding Sorts}">
+      <ListView ItemSelected="selectionNull" HasUnevenRows="true" ItemsSource="{Binding Sorts}" >
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ViewCell>
-              <StackLayout>
-                <Label FontSize="18" Text="{Binding Nom}"/>
-                <StackLayout Orientation="Horizontal">
-                  <Image WidthRequest="90"
-                         HeightRequest="90"
-                         Aspect="AspectFit"
-                         Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>
-                  <Label Text="{Binding Description}"/>
-                </StackLayout>
-              </StackLayout>
-            </ViewCell>
+            <customLib:SortViewCell    Nom="{Binding Nom}" Description="{Binding Description}" Image="{Binding Image}"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

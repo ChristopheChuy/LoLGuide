@@ -22,17 +22,29 @@ namespace CoreViewModel
         /// <summary>
         /// Property Nom du sort
         /// </summary>
-        public string Nom { get; private set; }
+        public string Nom
+        {
+            get { return model.Nom; }
+            
+        }
 
         /// <summary>
         /// Property Description du sort
         /// </summary>
-        public string Description { get; private set; }
+        public string Description
+        {
+            get { return model.Description; }
+           
+        }
 
         /// <summary>
         /// Property Image du sort
         /// </summary>
-        public string Image { get; private set; }
+        public string Image
+        {
+            get { return model.Image; }
+          
+        }
 
         /// <summary>
         /// Constructeur
@@ -41,9 +53,6 @@ namespace CoreViewModel
         public SortViewModel(Sort sort)
         {
             model = sort;
-            Nom = sort.Nom;
-            Description = sort.Description;
-            Image = sort.Image;
         }
     }
 }

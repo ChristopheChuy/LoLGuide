@@ -49,13 +49,13 @@ namespace Core
                             champ.First["tags"].Select(tag => (string)tag).ToList()
                         ),
                         listeSorts = champ.First()["spells"].Children().Select(spell => new Sort(
-                                  (string)spell["name"],
-                                  ((string)spell["description"]).Replace("<br>", ""),
-                                  (string)spell["image"]["full"]
+                                   (string)spell["name"],
+                                  (string)spell["description"],
+                                   (string)spell["image"]["full"]
                                   )
                         ).ToList(),
                     }
-                    ).OrderBy(champ => champ.champion.Nom).ToList();
+                      ).OrderBy(champ => champ.champion.Nom).ToList();
 
                     foreach(var cs in ListeChampions){
                         cs.champion.addSort(cs.listeSorts);

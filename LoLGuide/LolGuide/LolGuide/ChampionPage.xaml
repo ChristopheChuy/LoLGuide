@@ -10,7 +10,7 @@
         <ColumnDefinition />
         <ColumnDefinition Width="auto"/>
       </Grid.ColumnDefinitions>
-      <SearchBar   Placeholder="Champion..."
+      <SearchBar Placeholder="Champion..."
                  x:Name="search"
                  SearchCommand="{Binding Search}"
                  SearchCommandParameter="{Binding Text, Source={x:Reference search}}"
@@ -27,7 +27,7 @@
               ItemSelected="OnItemSelected"
               ItemsSource="{Binding ListChampionAffiche}"
               RefreshCommand="{Binding GetListChampionCommand}"
-              x:Name="listChampion">
+              >
       <ListView.ItemTemplate>
         <DataTemplate>
           <ImageCell TextColor="{StaticResource color}" Text="{Binding Nom}"

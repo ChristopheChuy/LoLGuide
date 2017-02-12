@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lib;"
+             x:Class="Lib.SortViewCell"
+             x:Name="root">
+  
+  <StackLayout BindingContext="{x:Reference root}" >
+    <Label FontSize="18" Text="Bob"/>
+    <Label FontSize="18" Text="{Binding Bob}"/>
+    <Label FontSize="18" Text="Nom"/>
+    <Label FontSize="18" Text="{Binding Nom}"/>
+    <Label FontSize="18" Text="Description"/>
+    <Label Text="{Binding Description}"/>
+    <!--<StackLayout Orientation="Horizontal">
+      --><!--<StackLayout.Resources>
+        <ResourceDictionary>
+          <local:ImageSortConverter x:Key="imageSortConverter"/>
+        </ResourceDictionary>
+       
+      </StackLayout.Resources>--><!--
+      --><!--<Image WidthRequest="90"
+             HeightRequest="90"C:\Users\christophe\Source\Repos\lolguide4\LoLGuide\Lib\SortViewCell.xaml
+             Aspect="AspectFit"
+             Source="{Binding Image,Converter={StaticResource imageSortConverter}}"/>--><!--
+      <Label Text="{Binding Description}"/>
+    
+  </StackLayout>-->
+  </StackLayout>
+
+</ViewCell>

@@ -8,10 +8,13 @@
   <Application.Resources>
     <ResourceDictionary>
       <local:ImageChampionConverter x:Key="imageChampionConverter"/>
-      <local:ImageSortConverter x:Key="imageSortConverter"/>
+     
       <Color x:Key="color">Green</Color>
       <Style x:Key="buttonStyle" TargetType="Button">
-        <Setter Property="BorderRadius" Value="15"/>
+        <Setter Property="TextColor" Value="Red"/>
+      </Style>
+      <Style x:Key="fontSizeLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="16"/>
       </Style>
     </ResourceDictionary>
   </Application.Resources>

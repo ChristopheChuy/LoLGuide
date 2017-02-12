@@ -14,7 +14,6 @@ namespace LolGuide
         private ChampionViewModel Champion;
         public FacadeViewModel Facade { get; private set; }
         private Switch FavoriSwitch { get { return favoriSwitch; } }
-
         public InfoChampion(ChampionViewModel champion, FacadeViewModel facade)
         {
             InitializeComponent();
@@ -23,7 +22,11 @@ namespace LolGuide
             BindingContext = champion;
             FavoriSwitch.Toggled += ChangementFavori;
         }
+        void selectionNull(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
 
+        }
         void ChangementFavori(object sender, ToggledEventArgs e)
         {
             if (e.Value)

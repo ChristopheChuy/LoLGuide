@@ -113,7 +113,7 @@ namespace CoreViewModel
                     }
                 }
             });
-            GetListChampionCommand = new Command(() => { GetListChampion(); });
+            GetListChampionCommand = new Command(() => { GetListChampion(); BoutonIntitule = "Favori"; });
             Search = new Command(text => { ListChampionAffiche = new ObservableCollection<ChampionViewModel>(ListChampionAffiche.Where(championVM => championVM.Nom.ToLower().Contains(((string)text).ToLower()))); });
             BoutonIntitule = "Favori";
             FacadeModel = new Facade(new ChargerChampionAPI(), new SauvegarderChampionXML());
